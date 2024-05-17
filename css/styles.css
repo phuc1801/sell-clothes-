@@ -1,0 +1,93 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 13px;
+}
+
+.width50 {
+    width: 48%;
+}
+
+.container {
+    width: 770px;
+    height: 430px;
+}
+
+.heading .heading-sp {
+    margin: auto;
+    color: white;
+}
+.heading {
+    display: flex;
+    justify-content: flex-start;
+    width: 770px;
+    height: 40px;
+    border-bottom: 1px solid red;
+    background-color: #fcf3f3;
+}
+
+.heading-item {
+    display: flex;
+    width: 215px;
+    height: 40px;
+    background-color: red;
+}
+
+.heading-tg {
+    display: inline-block;
+    border: 20px solid;
+    border-color: transparent transparent red red;
+}
+
+.content-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33%;
+    height: 190px;
+    border: 1px solid #ccc;
+}
+
+.box-item p {
+    color: #127894;
+    font-weight: bold;
+}
+
+.box-item ul {
+    padding-left: 7px;
+}
+
+.box-item ul li::marker {
+    margin-left: -10px;
+    color: red;
+}
+.item-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.item-button button {
+    border: none;
+    margin: 2px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.item-button button:first-child {
+    background-color: #48adc9;
+}
+
+.item-button button:nth-of-type(2){
+    background-color: #2d2d2d;
+}
+
+.box-item img {
+    width: 115px;
+    height: 150px;
+}
