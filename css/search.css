@@ -1,0 +1,50 @@
+/* CSS for the search box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-box form {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #007BFF;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-f{
+    margin: 50px;
+}

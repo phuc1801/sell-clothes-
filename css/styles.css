@@ -6,10 +6,16 @@ body {
 .width50 {
     width: 48%;
 }
+.body-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 
-.container {
+.container {    
+    margin: 100px;
     width: 770px;
-    height: 430px;
 }
 
 .heading .heading-sp {
@@ -90,4 +96,7 @@ body {
 .box-item img {
     width: 115px;
     height: 150px;
+}
+.btn-f{
+    margin: 50px;
 }
