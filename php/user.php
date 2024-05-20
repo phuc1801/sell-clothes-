@@ -95,6 +95,9 @@ if ($search) {
         <form action="logout.php" method="post">
             <button type="submit" class="btn-black">Đăng xuất</button>
         </form>
+        <form action="change_password.php" method="post">
+            <button type="submit" class="btn-black">Đổi mật khẩu</button>
+        </form>
     </div>
 </body>
 </html>
