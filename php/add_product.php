@@ -25,7 +25,10 @@
         }
         echo $upload_directory ;
     }
-
+    if(isset($_POST['back'])){
+        header('Location: index.php');
+        exit();
+    }
 ?>
 
 
@@ -51,6 +54,8 @@
         <input type="text" name="gia"> 
         <br><br> 
         <button type="submit" name="btn">Submit</button>
+        <button type="submit" name="back">Quay lại</button>
+
     </form>
 </body>
 </html>

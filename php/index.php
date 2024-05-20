@@ -20,6 +20,8 @@ $stmt->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -75,13 +77,13 @@ $stmt->execute();
     </div>
     <div class="btn-f">
         <form action="logout.php" method="post">
-            <button type="submit">Đăng xuất</button>
+            <button type="submit" class="btn-black">Đăng xuất</button>
         </form>
         <form action="add_product.php"method="post">
-        <button type="submit">Thêm</button>
+        <button type="submit" class="btn-black">Thêm</button>
         </form>
         <form action="pending_orders.php"method="post">
-        <button type="submit">Duyệt đơn hàng</button>
+        <button type="submit" class="btn-black">Duyệt đơn hàng</button>
         </form>
     </div> 
 </body>
