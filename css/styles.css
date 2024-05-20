@@ -90,6 +90,7 @@ body {
 }
 
 .item-button button:nth-of-type(2){
+    padding: 10px;
     background-color: #2d2d2d;
 }
 

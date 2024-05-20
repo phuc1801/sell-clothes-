@@ -26,9 +26,9 @@ if ($search) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="../css/search.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="../css/reset.css?v=<?php echo time();?>">
 
     <title>Sản phẩm nổi bật</title>
 </head>

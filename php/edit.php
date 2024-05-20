@@ -71,23 +71,43 @@ if (isset($_POST['btn'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="edit.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
-        <p>Name</p>
-        <input type="text" name="name" value="<?php echo htmlspecialchars($row['ten']); ?>">
-        <p>Image</p>
-        <span><img src="../img/<?php echo htmlspecialchars($row['anh']); ?>" alt="" width="50px" height="50px"></span>
-        <br> <br>
-        <input type="file" name="hinhanh">
-        <p>Bảo hành</p>
-        <input type="text" name="baohanh" value="<?php echo htmlspecialchars($row['baohanh']); ?>">
-        <p>Trạng thái</p>
-        <input type="text" name="trangthai" value="<?php echo htmlspecialchars($row['trangthai']); ?>">
-        <p>Giá</p>
-        <input type="text" name="gia" value="<?php echo htmlspecialchars($row['gia']); ?>">
-        <br><br>
-        <button type="submit" name="btn">Edit</button>
-    </form>
+    <div class="container mt-5">
+        <h2 class="text-center">Chỉnh Sửa Sản Phẩm</h2>
+        <form action="edit.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Tên sản phẩm:</label>
+                <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($row['ten']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Hình ảnh:</label>
+                <div class="row">
+                    <div class="" style="width: 80px; height: 80px; margin-left: 10px;">
+                        <img src="../img/<?php echo htmlspecialchars($row['anh']); ?>" alt="" class="img-thumbnail" style="width: 100%;">
+                    </div>
+                    <div class="col-md-9">
+                        <input type="file" class="form-control-file" id="image" name="hinhanh">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="baohanh">Bảo hành:</label>
+                <input type="text" class="form-control" id="baohanh" name="baohanh" value="<?php echo htmlspecialchars($row['baohanh']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="trangthai">Trạng thái:</label>
+                <input type="text" class="form-control" id="trangthai" name="trangthai" value="<?php echo htmlspecialchars($row['trangthai']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="gia">Giá:</label>
+                <input type="text" class="form-control" id="gia" name="gia" value="<?php echo htmlspecialchars($row['gia']); ?>" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="btn">Cập Nhật</button>
+        </form>
+    </div>
 </body>
 </html>
+

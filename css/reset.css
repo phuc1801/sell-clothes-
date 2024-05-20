@@ -16,3 +16,6 @@
     color: #fff;
     background-color: black;
 }
+ button:nth-child(2){
+    padding: 10px 10px;
+}
