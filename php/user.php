@@ -28,6 +28,8 @@ if ($search) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
     <title>Sản phẩm nổi bật</title>
 </head>
 <body>
@@ -64,7 +66,7 @@ if ($search) {
                                 <li>Trạng thái: <?php echo htmlspecialchars($row['trangthai']); ?></li>
                             </ul>
                         </div>
-                        <div class="item-button width50">
+                        <div class="item-button">
                             <?php
                             if (is_numeric($row['gia'])) {
                                 $formatted_price = number_format($row['gia'], 0, ',', '.');
@@ -91,7 +93,7 @@ if ($search) {
     </div>
     <div class="btn-f">
         <form action="logout.php" method="post">
-            <button type="submit">Đăng xuất</button>
+            <button type="submit" class="btn-black">Đăng xuất</button>
         </form>
     </div>
 </body>

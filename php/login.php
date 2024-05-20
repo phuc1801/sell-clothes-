@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/login.css?v= <?php echo time();?>">
     <link rel="stylesheet" href="../css/reset.css">
 
     <title>Document</title>
@@ -56,12 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" name="password" required=""> 
             <label>Password</label>
         </div>
+        <p>Bạn chưa có tài khoản <a href="">Đăng Kí</a></p>
         <a href="">Quên mật khẩu</a>
-        <button class="btn" type="submit" name="submit">Submit</button> 
+        <button class="btn" type="submit" name="submit" style="width: 150px;">Đăng Nhập</button> 
+        
     </form>
     <?php if(isset($error)) { ?> 
         <p><?php echo $error; ?></p>
     <?php } ?>
     </div>
+   
 </body>
 </html>
