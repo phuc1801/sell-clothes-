@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Password</label>
         </div>
         <p>Bạn chưa có tài khoản <a href="">Đăng Kí</a></p>
-        <a href="">Quên mật khẩu</a>
+        <a href="forgot_password.php">Quên mật khẩu</a>
         <button class="btn" type="submit" name="submit" style="width: 150px;">Đăng Nhập</button> 
         
     </form>
@@ -65,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><?php echo $error; ?></p>
     <?php } ?>
     </div>
+    
    
 </body>
 </html>
