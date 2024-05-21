@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']) || $_SESSION['type'] != 1) {
 
 include "connect.php";
 
-$sql = "SELECT * FROM orders WHERE status = 'pending'";
+$sql = "SELECT orders.*, account.email FROM orders JOIN account ON orders.username = account.username WHERE orders.status = 'pending'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 ?>
@@ -23,13 +23,14 @@ $stmt->execute();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Danh sách đơn hàng chờ duyệt</h1>
-        <table class="table">
+    <div class="container mt-5">
+        <h1 class="text-center">Danh sách đơn hàng chờ duyệt</h1>
+        <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
                     <th>ID Đơn hàng</th>
                     <th>Tên khách hàng</th>
+                    <th>Email</th>
                     <th>Tổng tiền</th>
                     <th>Thời gian đặt hàng</th>
                     <th>Trạng thái</th>
@@ -39,17 +40,20 @@ $stmt->execute();
             <tbody>
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['username']; ?></td>
+                        <td><?php echo htmlspecialchars($row['id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['username']); ?></td>
+                        <td><?php echo htmlspecialchars($row['email']); ?></td>
                         <td><?php echo number_format($row['total'], 0, ',', '.') . 'đ'; ?></td>
-                        <td><?php echo $row['created_at']; ?></td>
-                        <td><?php echo $row['status']; ?></td>
-                        <td><a href="approve_order.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Bạn có chắc chắn muốn duyệt đơn hàng này?');">Duyệt</a></td>
+                        <td><?php echo htmlspecialchars($row['created_at']); ?></td>
+                        <td><?php echo htmlspecialchars($row['status']); ?></td>
+                        <td>
+                            <a href="approve_order.php?id=<?php echo $row['id']; ?>&email=<?php echo htmlspecialchars($row['email']); ?>" class="btn btn-success btn-sm" onclick="return confirm('Bạn có chắc chắn muốn duyệt đơn hàng này?');">Duyệt</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <a href="index.php">Quay lại trang chính</a>
+        <a href="index.php" class="btn btn-primary mt-3">Quay lại trang chính</a>
     </div>
 </body>
 </html>
